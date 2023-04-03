@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar1" > 
+             
+                <a href=""> Home </a><p>|</p><a href=""> inventory </a><p>|</p><a href=""> invoice </a>
+            
+        </div>
+        <div class="nav-bar2">
+            <form action="/log_out" method="post">
+                {%csrf_token%}
+                <input type="submit" value="Log out">
+
+            </form>
+            
+        </div>
+    </div>
+    
+
+    <div>
+       
+        {%for usr in user%}
+        
+        <p>{{usr.email}} {{usr.first_name}} {{usr.last_name}} </p>
+        {%endfor%}
+    </div>
+    <div>
+        {{userid.first_name}}
+    </div>
+    
+    <h1>welcome to our project</h1>
+    <h1>hiiiiiiiiiiiiiii</h1>
+</body>
+</html>
